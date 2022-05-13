@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #FFFFFF;
+  overflow: hidden;
+  display: flex;
+  margin: 0 auto;
+  max-width: 1920px;
+  height: 100vh;
+}
+
+.container {
+  animation: scroll 70s linear infinite;
+  background: url("./images/background.jpg"), #111111;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  perspective-origin: 50% 50%;
+}
+
+@keyframes scroll {
+   100%{
+    background-position: 0px -3000px;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .container {
+    animation: scroll 200s linear infinite;
+  }
+}
+
+.slides {
+    display: flex;
+    width: 100%;
+}
+
+.slides img {
+  width: 100%;
+  transition: all 0.5s ease-in;
+  border-radius: 3%;
+  box-shadow: 0px 0px 60px 20px #000000;
+}
+
+body input {
+  display: none;
+}
+
+.dots {
+  display: flex;
+  justify-content: flex-end;
+  float: right;
+  column-gap: 0.6rem;
+  padding-top: 2.1rem;
+}
+
+.dots label {
+  height: 1.5rem;
+  width: 1.5rem;
+  padding: 0.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dots label span {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.5s ease-in;
+  border: 0.2rem solid rgba(94,0,118,1);
+}
+
+.dots label span:hover {
+  background-color: #f6cdfe;
+}
+
+.dots label span:active {
+  background-color: #e97fff;
+}
+
+.text {
+  display: flex;
+  justify-content: flex-start;
+  color: #FFFFFF;
+  float: left;
+  height: 2rem;
+  padding-top: 2rem;
+  font-family: 'Architects Daughter', cursive;
+  font-size: 1.1rem;
+  text-shadow: -4px 4px 7px rgba(94,0,118,1);
+  }
+
+.text span {
+  animation-name: text-appears;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+}
+
+@keyframes text-appears {
+  0% {
+    opacity: 0;
+    font-size: 0.2rem;
+  }
+  20% {
+    opacity: 0.2;
+    font-size: 0.4rem;
+  }
+  40% {
+    opacity: 0.4;
+    font-size: 0.6rem;
+  }
+  60% {
+    opacity: 0.6;
+    font-size: 0.8rem;
+  }
+  80% {
+    opacity: 0.8;
+    font-size: 1rem;
+  }
+  100% {
+    opacity: 1;
+    font-size: 1.1rem;
+  }
+}
+
+@keyframes images-appears {
+  0% {
+      opacity: 0;
+  }
+  20% {
+      opacity: 0.2;
+  }
+  40% {
+      opacity: 0.4;
+  }
+  60% {
+      opacity: 0.6;
+  }
+  80% {
+      opacity: 0.8;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+#image1:checked ~ .container .slider .slides .slide1 {
+  display: flex;
+  margin-left: 0;
+  animation-name: images-appears;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+}
+
+#image2:checked ~ .container .slider .slides .slide2 {
+  display: flex;
+  margin-left: 0;
+  animation-name: images-appears;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+}
+
+#image3:checked ~ .container .slider .slides .slide3 {
+  display: flex;
+  margin-left: 0;
+  animation-name: images-appears;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+}
+
+#image4:checked ~ .container .slider .slides .slide4 {
+  display: flex;
+  margin-left: 0;
+  animation-name: images-appears;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+}
+
+#image5:checked ~ .container .slider .slides .slide5 {
+  display: flex;
+  margin-left: 0;
+  animation-name: images-appears;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+}
+
+#image1:checked ~ .container .slider .dots .dot1 span,
+#image2:checked ~ .container .slider .dots .dot2 span,
+#image3:checked ~ .container .slider .dots .dot3 span,
+#image4:checked ~ .container .slider .dots .dot4 span,
+#image5:checked ~ .container .slider .dots .dot5 span {
+  background-color: #FFFFFF;
+  border: 0.2rem solid #FFFFFF;
+}
+
+#image1:checked ~ .container .slider .text .text1,
+#image2:checked ~ .container .slider .text .text2,
+#image3:checked ~ .container .slider .text .text3,
+#image4:checked ~ .container .slider .text .text4,
+#image5:checked ~ .container .slider .text .text5 {
+  display: flex;
+}
+
+#image1:checked ~ .container .slider .text .text2, .text3, .text4, .text5 {
+  display: none;
+}
+
+#image2:checked ~ .container .slider .text .text1, .text3, .text4, .text5 {
+  display: none;
+}
+
+#image3:checked ~ .container .slider .text .text1, .text2, .text4, .text5 {
+  display: none;
+}
+
+#image4:checked ~ .container .slider .text .text1, .text2, .text3, .text5 {
+  display: none;
+}
+
+#image5:checked ~ .container .slider .text .text1, .text2, .text3, .text4 {
+  display: none;
+}
+
+#image1:checked ~ .container .slider .slides .slide2, .slide3, .slide4, .slide5 {
+  display: none;
+}
+
+#image2:checked ~ .container .slider .slides .slide1, .slide3, .slide4, .slide5 {
+  display: none;
+}
+
+#image3:checked ~ .container .slider .slides .slide1, .slide2, .slide4, .slide5 {
+  display: none;
+}
+
+#image4:checked ~ .container .slider .slides .slide1, .slide2, .slide3, .slide5 {
+  display: none;
+}
+
+#image5:checked ~ .container .slider .slides .slide1, .slide2, .slide3, .slide4 {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .container .slider {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text {
+    order: 1;
+  }
+}
