@@ -11,14 +11,14 @@ body {
   overflow: hidden;
   display: flex;
   margin: 0 auto;
-  min-width: 1920px;
+  max-width: 1920px;
+  height: 100vh;
 }
 
 .container {
   animation: scroll 70s linear infinite;
   background: url("./images/background.jpg"), #111111;
-  height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
