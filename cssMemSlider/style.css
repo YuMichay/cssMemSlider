@@ -261,4 +261,8 @@ body input {
     justify-content: center;
     align-items: center;
   }
+
+  .text {
+    order: 1;
+  }
 }
